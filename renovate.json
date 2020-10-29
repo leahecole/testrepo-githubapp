@@ -1,0 +1,8 @@
+{
+
+  "pip_requirements": {
+    "fileMatch": ["requirements-composer.txt"]
+  }
+
+
+}
