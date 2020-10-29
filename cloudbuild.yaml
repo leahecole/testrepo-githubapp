@@ -1,0 +1,4 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['composer', 'environments', 'update', 'cloudbuild-demo', '--update-pypi-packages-from-file', 'composer/workflows/requirements-composer.txt', '--location', 'us-central1']
+timeout: 3600s
