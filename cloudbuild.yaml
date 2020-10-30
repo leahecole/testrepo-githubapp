@@ -8,4 +8,4 @@ steps:
     args: ['composer', 'environments', 'update', 'cloudbuild-demo', '--update-pypi-packages-from-file', 'requirements-composer.txt', '--location', 'us-west4']
     id: 'update-composer-env'
     waitFor: ['test-dags']
-    timeout: 3600s
+timeout: 3600s
