@@ -1,8 +1,11 @@
 steps:
   #unit test the dags 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['run', '-it', 'gcr.io/leah-playground/cicd']
-    id: 'test-dags'
+    args: ['build', '-t', 'gcr.io/leah-playground/cicd', '.']
+    id: 'docker build'
+  - name: 'gcr.io/cloud-builders/docker'
+  args: ['run', '-it', 'cicd']
+  id: 'test-dags'
   #update the composer environment
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['composer', 'environments', 'update', 'cloudbuild-demo', '--update-pypi-packages-from-file', 'requirements-composer.txt', '--location', 'us-west4']
