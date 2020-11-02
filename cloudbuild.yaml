@@ -1,7 +1,7 @@
 steps:
   #unit test the dags 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/leah-playground/cicd', '.']
+    args: ['run', '-it', 'gcr.io/leah-playground/cicd']
     id: 'test-dags'
   #update the composer environment
   - name: 'gcr.io/cloud-builders/gcloud'
