@@ -1,14 +1,9 @@
 steps:
-  #unit test the dags 
+  # build the docker image
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/leah-playground/cicd:latest', '.']
     id: 'docker build'
-  # - name: 'gcr.io/cloud-builders/docker'
-  #   args: ['push', 'gcr.io/leah-playground/cicd:latest']
-  #   id: 'docker push'
-  # - name: 'gcr.io/cloud-builders/docker'
-  #   args: ['pull', 'gcr.io/leah-playground/cicd:latest']
-  #   id: 'docker pull'
+  # run the dag tests
   - name: 'gcr.io/cloud-builders/docker'
     args: ['run', 'gcr.io/leah-playground/cicd:latest']
     id: 'test-dags'
@@ -16,4 +11,4 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['composer', 'environments', 'update', 'cloudbuild-demo', '--update-pypi-packages-from-file', 'requirements-composer.txt', '--location', 'us-west4']
     id: 'update-composer-env'
-timeout: 3600s
+timeout: 3600s #1 hour timeout accommodates the long running Composer upgrade operation

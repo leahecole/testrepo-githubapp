@@ -1,4 +1,4 @@
-from airflow.operators.bash_operato import BashOperator
+from airflow.operators.bash_operator import BashOperator
 from airflow.providers.google.cloud.operators.gcs import GCSCreateBucketOperator
 from airflow.providers.google.cloud.operators.gcs import GCSListObjectsOperator
 from airflow.providers.google.cloud.operators.gcs import GCSDeleteBucketOperator
