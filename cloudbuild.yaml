@@ -3,12 +3,12 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/leah-playground/cicd:latest', '.']
     id: 'docker build'
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/leah-playground/cicd:latest']
-    id: 'docker push'
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['pull', 'gcr.io/leah-playground/cicd:latest']
-    id: 'docker pull'
+  # - name: 'gcr.io/cloud-builders/docker'
+  #   args: ['push', 'gcr.io/leah-playground/cicd:latest']
+  #   id: 'docker push'
+  # - name: 'gcr.io/cloud-builders/docker'
+  #   args: ['pull', 'gcr.io/leah-playground/cicd:latest']
+  #   id: 'docker pull'
   - name: 'gcr.io/cloud-builders/docker'
     args: ['run', '-it', 'gcr.io/leah-playground/cicd:latest']
     id: 'test-dags'
