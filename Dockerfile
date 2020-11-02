@@ -15,5 +15,5 @@ RUN pip install -r requirements-composer.txt
 ENV DAGS /dags
 WORKDIR $DAGS
 COPY . ./
-# CMD ["ls"]
-CMD ["pytest", "-s", "dags/example_dag_test.py"]
+CMD ["ls"]
+# CMD ["pytest", "-s", "dags/example_dag_test.py"]
