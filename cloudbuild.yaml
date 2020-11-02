@@ -10,7 +10,7 @@ steps:
     args: ['pull', 'gcr.io/leah-playground/cicd:latest']
     id: 'docker pull'
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['run', '-it', 'cicd:latest']
+    args: ['run', '-it', 'gcr.io/leah-playground/cicd:latest']
     id: 'test-dags'
   #update the composer environment
   - name: 'gcr.io/cloud-builders/gcloud'
