@@ -1,12 +1,4 @@
 steps:
-  # build the docker image
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/leah-playground/cicd:latest', '.']
-    id: 'docker build'
-  # run the dag tests
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['run', 'gcr.io/leah-playground/cicd:latest']
-    id: 'test-dags'
   #update the composer environment
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['composer', 'environments', 'update', 'cloudbuild-demo', '--update-pypi-packages-from-file', 'requirements-composer.txt', '--location', 'us-west4']
