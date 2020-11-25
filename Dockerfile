@@ -7,9 +7,9 @@ COPY requirements.txt ./
 COPY requirements-composer.txt ./
 COPY requirements-test.txt ./
 
-RUN pip install -r --no-cache-dir requirements.txt
-RUN pip install -r --no-cache-dir requirements-test.txt
-RUN pip install -r --no-cache-dir requirements-composer.txt
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements-test.txt
+RUN pip install --no-cache-dir -r requirements-composer.txt
 
 #copy dag code to container image
 ENV DAGS /dags
