@@ -7,5 +7,3 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['run', 'gcr.io/${PROJECT_ID}/cicd:${SHORT_SHA}']
     id: 'test-dags'
-
-timeout: 3600s #1 hour timeout accommodates the long running Composer upgrade operation
