@@ -5,6 +5,6 @@
   "baseBranches": ["main"],
   "masterIssue": true,
   "pip_requirements": {
-    "fileMatch": ["requirements-composer.txt", "requirements-test.txt", "constraints.txt", "constraints-test.txt"]
+    "fileMatch": ["requirements-composer.txt", "requirements-test.txt", "samples/**/constraints.txt", "samples/**/constraints-test.txt"]
   }
 }
